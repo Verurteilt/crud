@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title>Perfil de {{name}}</title>
+</head>
+<body>
+	{%if vacio%}
+		<p>No existe este usuario</p>
+	{%else%}
+	Nombre: {{name}} <br>
+	Email: {{email}} <br>
+	Creado: {{creado}} 	<br>
+	Actualizado {{actualizado}}
+	{%end%}
+</body>
+</html>

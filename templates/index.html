@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Redis Example</title>
+</head>
+<body>
+		Usuarios Registrados
+		{%try%}
+		{%for user in users%}
+			<a href="/read_only/{{users[user]}}"><li>{{users[user]}}</li></a>
+		{%end%}
+		{%except%}
+			<p>No hay usuarios</p>
+		{%end%}
+
+		
+
+		{%if logeado%}
+				<a href="/logout">Logout</a>
+				<a href="/read_only/{{ul}}">Ver perfil</a>
+				<a href="/delete/{{ul}}">Borrar mi perfil</a>
+		{%else%}
+			<a href="/create">Crear usuario</a>
+			<a href="/login">Login</a>
+		{%end%}
+</body>
+</html>
