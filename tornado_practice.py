@@ -57,11 +57,10 @@ class UPDATE(tornado.web.RequestHandler):
         self.render('templates/update.html', username=username)
 
     def post(self, *args):
-        username = self.get_argument("username")
         password = self.get_argument("password")
         email = self.get_argument("email")
         try:
-            x.update(username, password, email)
+            x.update(self.current_user, password, email)
             self.write("Muy bien, actualizado :D <a href='/'>Inicio</a>")
         except:
             raise Exception(x.update(username, password, email))
